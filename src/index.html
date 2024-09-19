@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+        <script>
+
+            let myList = [];
+            let myObject = {};
+
+            function doSomething() {
+                console.log("Something");
+                addToList();
+                let innerHTML = "<ul>";
+                myList.forEach((item) => {
+                    innerHTML += `<li>${item}<span class="deleteFromLit" onClick="deleteFromList()"</li>`;
+                }); 
+                innerHTML += "</ul>";
+                document.getElementById("helloWorld").innerHTML= innerHTML;
+            }
+
+            function addToList() {
+                let value = document.getElementById("inputField").value;
+                myList.push(value);
+            }
+
+            function deleteFromList(number){
+                myList.splice(value, 1);
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="helloWorld"> 
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul> 
+        </div>
+        <button id= "btnClickme" onClick="doSomething()"> Klick mich </button>
+        <button id = "btnDelete" onClick ="deleteFromList()"> Lösche Element</button>
+        <input id="inputField" value="default"></input>
+    </body>
+</html>
